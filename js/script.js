@@ -16,7 +16,11 @@ appX.controller('app', function($scope){
 		}
 	};
 	$scope.addTask = function(){
-		$scope.tasks.push($scope.task);
+		$scope.tasks.push({
+			'taskMessage': $scope.task,
+			'status': false,
+
+		});
 		console.log($scope.tasks);
 		$scope.task="";
 	};
