@@ -23,6 +23,14 @@
 				<input ng-model="task" ng-keyup="searchEnter()" type="text" name="" id="taskDis">
 			</div>
 		</div>
+		<div class="row" id="taskToShow">
+			<ul>
+				<li ng-repeat="x in tasks">
+					{{x}}
+				</li>
+			</ul>
+			
+		</div>
 	</div>
 	
 </body>
