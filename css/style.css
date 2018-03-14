@@ -11,3 +11,8 @@ span.done-true{
 	font-style: italic;	
 	text-decoration: line-through;
 }
+
+span[contenteditable="true"]{
+	background: grey;
+	padding: 3px;
+}

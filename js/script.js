@@ -2,8 +2,10 @@ var appX=angular.module('mainApp', []);
 
 appX.controller('app', function($scope){
 	
+	// array to store information about the todo list work
 	$scope.tasks = [];
 	
+	// function for input enter
 	$scope.searchEnter = function(){
 		// console.log(event.keyCode);
 		/*
@@ -15,6 +17,8 @@ appX.controller('app', function($scope){
 			}
 		}
 	};
+
+	// function for add information about task
 	$scope.addTask = function(){
 		$scope.tasks.push({
 			'taskMessage': $scope.task,
@@ -23,5 +27,10 @@ appX.controller('app', function($scope){
 		});
 		console.log($scope.tasks);
 		$scope.task="";
+	};
+
+	// function for double click and edit
+	$scope.contentEdit = function(){
+		event.target.contentEditable = event.target.contentEditable == "false" ? "true" : "false"
 	};
 });
