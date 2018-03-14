@@ -1,0 +1,8 @@
+#taskDis{
+	display: block;
+	width: 350px;
+	height: 200px;
+	align-self: center;
+	padding: 5px;
+	font-size: 15px;
+}
