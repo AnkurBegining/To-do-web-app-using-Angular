@@ -65,4 +65,12 @@ appX.controller('app', function($scope){
 		}
 		console.log("here");
 	};
+	$scope.RemoveItem = function (x) {
+     $scope.errortext = "";
+        $scope.tasks.splice(x, 1);
+    };
+    $scope.changeStatus = function(x){
+        localStorage['tasksList'] = JSON.stringify($scope.tasks);
+        console.log(localStorage);
+    };﻿
 });

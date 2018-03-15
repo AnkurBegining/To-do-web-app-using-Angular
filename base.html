@@ -24,16 +24,20 @@
 			</div>
 		</div>
 		<div class="row" id="taskToShow">
-			<ul>
+			<div class="col-md-12">
+				<ul>
 				<li ng-repeat="x in tasks track by $index">
-					<input type="checkbox" ng-model="x.status">
+					<input type="checkbox"  ng-click="changeStatus($index)" ng-model="x.status">
 					<!--When someone click double click then he can edit and update it -->
-					<span contenteditable="false" ng-dblclick="contentEdit(x.taskMessage)" ng-keydown="enterAgainForEdit(x.taskMessage)" class="done-{{x.status}}" ng-model="x.taskMessage">
-						{{x.taskMessage}}
+					<span contenteditable="false" ng-dblclick="contentEdit(x.taskMessage)" ng-keydown="enterAgainForEdit(x.taskMessage)" class="done-{{x.status}}" ng-model="x.taskMessage" id="span1">
+							{{x.taskMessage}}
 					</span>
+					<span class="span2"><button ng-click="RemoveItem($index)">&times;</button></span>
+					<br>
+					<hr>
 				</li>
 			</ul>
-			
+			</div>
 		</div>
 	</div>
 	

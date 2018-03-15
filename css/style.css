@@ -16,3 +16,11 @@ span[contenteditable="true"]{
 	background: grey;
 	padding: 3px;
 }
+#span1{
+	width: 50%;
+	padding: 15px;
+}
+.span2{
+	width: 50%;
+	padding: 15px;
+}
