@@ -31,6 +31,17 @@ appX.controller('app', function($scope){
 
 	// function for double click and edit
 	$scope.contentEdit = function(){
-		event.target.contentEditable = event.target.contentEditable == "false" ? "true" : "false"
+		console.log("something");
+		event.target.contentEditable = event.target.contentEditable == "false" ? "true" : "false";
+	};
+
+	// function for pressing enter key and update after the key
+	$scope.enterAgainForEdit = function(){
+		console.log(event.which);
+		if(event.which==13 || event.keyCode==13 && $scope.task != ""){
+			$scope.contentEdit();
+			console.log("1");
+		}
+		console.log("here");
 	};
 });

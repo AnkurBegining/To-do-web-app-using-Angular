@@ -28,7 +28,7 @@
 				<li ng-repeat="x in tasks">
 					<input type="checkbox" ng-model="x.status">
 					<!--When someone click double click then he can edit and update it -->
-					<span contenteditable="false" ng-dblclick="contentEdit()" class="done-{{x.status}}" ng-model="x.taskMessage">
+					<span contenteditable="false" ng-dblclick="contentEdit()" ng-keydown="enterAgainForEdit(x.taskMessage)" class="done-{{x.status}}" ng-model="x.taskMessage">
 						{{x.taskMessage}}
 					</span>
 				</li>
