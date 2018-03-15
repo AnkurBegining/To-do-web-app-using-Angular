@@ -4,6 +4,13 @@ appX.controller('app', function($scope){
 	
 	// array to store information about the todo list work
 	$scope.tasks = [];
+
+	// Local Storage
+	var taskData = localStorage['tasksList'];
+
+	if (taskData !== undefined){
+		$scope.tasks = JSON.parse(taskData);
+	}
 	
 	// function for input enter
 	$scope.searchEnter = function(){
@@ -26,7 +33,10 @@ appX.controller('app', function($scope){
 
 		});
 		console.log($scope.tasks);
-		$scope.task="";
+		$scope.task='';
+
+		localStorage['tasksList'] = JSON.stringify($scope.tasks);
+		console.log(localStorage);
 	};
 
 	// function for double click and edit
