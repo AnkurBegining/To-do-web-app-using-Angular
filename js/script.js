@@ -36,20 +36,31 @@ appX.controller('app', function($scope){
 		$scope.task='';
 
 		localStorage['tasksList'] = JSON.stringify($scope.tasks);
-		console.log(localStorage);
+		// console.log(localStorage);
 	};
 
 	// function for double click and edit
-	$scope.contentEdit = function(){
+	$scope.contentEdit = function(msg){
 		console.log("something");
+
+		for(i=0;i<$scope.tasks.length;i++){
+			if($scope.tasks[i].taskMessage == msg){
+				$scope.tasks[i].taskMessage = event.target.innerText;
+				console.log("Reached Here");
+			}
+		}
+
+		localStorage['tasksList'] = JSON.stringify($scope.tasks);
+		console.log($scope.tasks);
+
 		event.target.contentEditable = event.target.contentEditable == "false" ? "true" : "false";
 	};
 
 	// function for pressing enter key and update after the key
-	$scope.enterAgainForEdit = function(){
+	$scope.enterAgainForEdit = function( msg){
 		console.log(event.which);
-		if(event.which==13 || event.keyCode==13 && $scope.task != ""){
-			$scope.contentEdit();
+		if((event.which==13 || event.keyCode==13) && msg != ""){
+			$scope.contentEdit(msg);
 			console.log("1");
 		}
 		console.log("here");
