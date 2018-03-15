@@ -39,6 +39,46 @@
 			</ul>
 			</div>
 		</div>
+		<br>
+		<br>
+		<div class="row">
+			<div class="col-md-6">
+				<h2 style="text-align: center;">
+					To-do: Doing
+				</h2>
+				<hr>
+				<ul>
+					<li ng-repeat="x in tasks track by $index" ng-if="x.status==false">
+						<input type="checkbox"  ng-click="changeStatus($index)" ng-model="x.status">
+							<!--When someone click double click then he can edit and update it -->
+							<span contenteditable="false" ng-dblclick="contentEdit(x.taskMessage)" ng-keydown="enterAgainForEdit(x.taskMessage)" class="done-{{x.status}}" ng-model="x.taskMessage" id="span1">
+							{{x.taskMessage}}
+							</span>
+							<span class="span2"><button ng-click="RemoveItem($index)">&times;</button></span>
+							<br>
+							<hr>
+				    </li>
+				</ul>
+			</div>
+			<div class="col-md-6">
+				<h2 style="text-align: center;"> 
+					To-do: Done
+				</h2>
+				<hr>
+				<ul>
+					<li ng-repeat="x in tasks track by $index" ng-if="x.status==true">
+						<input type="checkbox"  ng-click="changeStatus($index)" ng-model="x.status">
+							<!--When someone click double click then he can edit and update it -->
+							<span contenteditable="false" ng-dblclick="contentEdit(x.taskMessage)" ng-keydown="enterAgainForEdit(x.taskMessage)" class="done-{{x.status}}" ng-model="x.taskMessage" id="span1">
+							{{x.taskMessage}}
+							</span>
+							<span class="span2"><button ng-click="RemoveItem($index)">&times;</button></span>
+							<br>
+							<hr>
+				    </li>
+				</ul>
+			</div>
+		</div>
 	</div>
 	
 </body>
